@@ -15,7 +15,6 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-
 	queue[end++] = tree;
 
 	while (start < end)
@@ -33,6 +32,5 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			queue[end++] = node->right;
 		}
 	}
-
 	return (1);
 }
