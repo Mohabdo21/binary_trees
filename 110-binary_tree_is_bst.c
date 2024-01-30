@@ -22,7 +22,7 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
 				(tree->right &&	tree->n >= tree->right->n))
 			return (0);
 		/* recursive call for right subtree */
-		return (bst_inorder(tree->right, tree));
+		return (bst_inorder(tree->right, (binary_tree_t *)tree));
 	}
 	return (1);
 }
