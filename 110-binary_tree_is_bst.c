@@ -30,6 +30,8 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (!tree)
+		return (0);
 	/* start with prev being NULL, i.e. root of tree */
 	return (bst_inorder(tree, NULL));
 }

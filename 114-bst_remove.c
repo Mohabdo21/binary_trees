@@ -15,6 +15,19 @@ bst_t *inorder_successor(bst_t *node)
 	return (node);
 }
 /**
+ * delete - delete a node "root" and succeed it by successor
+ * @root: root node of tree to delete
+ * @successor: successor to the root node
+ * Return: address of the successor
+ */
+bst_t *delete(bst_t *root, bst_t *successor)
+{
+	successor->parent = root->parent;
+	free(root);
+	root = NULL;
+	return (successor);
+}
+/**
  * bst_remove - removes a node from a BST
  * @root: root node of BST
  * @value: value of node to remove
@@ -28,34 +41,26 @@ bst_t *bst_remove(bst_t *root, int value)
 		root->left = bst_remove(root->left, value);
 	else if (value > root->n)
 		root->right = bst_remove(root->right, value);
-	else /* we found the element */
+	/* we found the element */
+	else
 	{
-		bst_t *successor = NULL;
-
-		if (!root->left && !root->right) /* no children */
-		{
-			free(root);
-			root = NULL;
-		}
-		else if (!root->left)/* right child */
-		{
-			successor = root;
-			root = root->right;
-			free(successor);
-			successor = NULL;
-		}
-		else if (!root->right)/* left child */
-		{
-			successor = root;
-			root = root->left;
-			free(successor);
-			successor = NULL;
-		}
+		/* no children */
+		if (!root->left && !root->right)
+			free(root),	root = NULL;
+		/* right child */
+		else if (!root->left)
+			root = delete(root, root->right);
+		/* left child */
+		else if (!root->right)
+			root = delete(root, root->left);
 		/* 2 children, find next successor using inorder_successor */
 		else
 		{
+			bst_t *successor = NULL;
+
 			successor = inorder_successor(root->right);
 			root->n = successor->n;
+			/* recursive call to handle the "succession" process */
 			root->right = bst_remove(root->right, successor->n);
 		}
 	}
