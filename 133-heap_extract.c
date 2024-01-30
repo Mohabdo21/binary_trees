@@ -1,30 +1,27 @@
 #include "binary_trees.h"
-/*/1** */
-/* * swap_values - This function swaps values in the heap */
-/* * */
-/* * @v1: a pointer to the value to be swapped */
-/* * @v2: a pointer to the value to be swapped */
-/* *1/ */
-/*void swap_values_heap(heap_t *v1, heap_t *v2) */
-/*{ */
-/*	int x; */
+/**
+ * swap_values - This function swaps values in the heap
+ *
+ * @v1: a pointer to the value to be swapped
+ * @v2: a pointer to the value to be swapped
+ */
+void swap_values(heap_t *v1, heap_t *v2)
+{
+	int x;
 
-/*	x = v1->n; */
-/*	v1->n = v2->n; */
-/*	v2->n = x; */
-/*} */
+	x = v1->n;
+	v1->n = v2->n;
+	v2->n = x;
+}
 
 /**
- * heapify - Builds the maxheap using the sift-down heap sort algorithm
- * Note: each time 2 elements are swapped, the array is printed
- * @array: pointer to the array of integers to be sorted
- * @n: limit of unsorted subarray
+ * sift_down - Builds the maxheap using the sift-down heap sort algorithm
  * @P: index of parent node
- * @size: size of the array
  */
 void sift_down(heap_t *P)
 {
 	heap_t *max = P;
+
 	if (!P)
 		return;
 	if (P->left && P->left->n > max->n)
@@ -38,12 +35,12 @@ void sift_down(heap_t *P)
 
 	if (max != P)
 	{
-		swap_values_heap(P, max);
+		swap_values(P, max);
 		sift_down(max);
 	}
 }
 /**
- * find_last - find last parent in heap
+ * find_last_level_node - find last level node in a Max Heap
  * @root: root of heap
  * Return: pointer to last element
  */
@@ -65,23 +62,23 @@ heap_t *find_last_level_node(heap_t *root)
 		if (node->right)
 			queue[end++] = node->right;
 	}
-	return queue[end - 1];
+	return (queue[end - 1]);
 }
 /**
- * bst_insert - insert value in a BST
- * @tree: double pointer to root node of BST
- * @value: value to store in the node to be inserted
- * Return: pointer to new node
+ * heap_extract - extract the root node and return its value
+ * @root: double pointer to root node of BST
+ * Return: value of extracted node
  */
 int heap_extract(heap_t **root)
 {
 	heap_t *candidate = (*root);
 	int value = 0;
+
 	if (!root || !(*root))
 		return (0);
 	value = candidate->n;
 	candidate = find_last_level_node(*root);
-	swap_values_heap((*root), candidate);
+	swap_values((*root), candidate);
 	if (candidate && candidate->parent)
 	{
 		if (candidate == candidate->parent->left)
@@ -95,5 +92,5 @@ int heap_extract(heap_t **root)
 	candidate = NULL;
 	if (*root)
 		sift_down(*root);
-	return value;
+	return (value);
 }
