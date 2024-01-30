@@ -16,7 +16,7 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t **prev)
 		if (!bst_inorder(tree->left, prev))
 			return (0);
 		/* check for duplication or unsorted pairs */
-		if (*prev && tree->n < (*prev)->n)
+		if (*prev && tree->n <= (*prev)->n)
 			return (0);
 		/* recursive call for right subtree */
 		*prev = tree;
