@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include <stdio.h>
 /**
  * bst_inorder - helper function to traverse a bst using in-order traversal
  *				and determine if it is indeed a bst
