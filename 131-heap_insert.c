@@ -16,13 +16,14 @@ void swap_values_heap(heap_t *v1, heap_t *v2)
 /**
  * heapify - Builds the maxheap using the sift-up heap sort algorithm
  * @P: Node to siftup from
+ * Return: pointer to inserted node
  */
-void heapify(heap_t *P)
+heap_t *heapify(heap_t *P)
 {
 	if (!P || !P->parent || P->parent->n > P->n)
-		return;
+		return (P);
 	swap_values_heap(P, P->parent);
-	heapify(P->parent);
+	return (heapify(P->parent));
 }
 /**
  * find_last_parent - find last parent in heap
@@ -77,7 +78,7 @@ heap_t *heap_insert(heap_t **root, int value)
 		{
 			parent->right = node;
 		}
-		heapify(node);
+		node = heapify(node);
 	}
 
 	return (node);
