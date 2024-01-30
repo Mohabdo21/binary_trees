@@ -4,12 +4,12 @@
  * bst_inorder - helper function to traverse a bst using in-order traversal
  *				and determine if it is indeed a bst
  * @tree: pointer to root node of the tree to traverse
- * @prev: pointer to the node we will use to recursively check against
  * Return: 1 if BST, 0 if not
  */
 int bst_inorder(const binary_tree_t *tree)
 {
-	static binary_tree_t *prev = NULL;
+	static binary_tree_t *prev;
+
 	/* traverse inorder and check if we're still in the tree */
 	if (tree)
 	{
