@@ -7,7 +7,7 @@
  * @prev: pointer to the node we will use to recursively check against
  * Return: 1 if BST, 0 if not
  */
-int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
+int bst_inorder(const binary_tree_t *tree, binary_tree_t *prev)
 {
 	/* traverse inorder and check if we're still in the tree */
 	if (tree)
