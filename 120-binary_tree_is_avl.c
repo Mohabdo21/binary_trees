@@ -7,7 +7,7 @@
  * @prev: pointer to the node we will use to recursively check against
  * Return: 1 if BST, 0 if not
  */
-int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
+int bst_inorder(const binary_tree_t *tree, const binary_tree_t **prev)
 {
 	/* traverse inorder and check if we're still in the tree */
 	if (tree)
@@ -16,10 +16,11 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
 		if (!bst_inorder(tree->left, prev))
 			return (0);
 		/* check for duplication or unsorted pairs */
-		if (prev && tree->n <= prev->n)
+		if (*prev && tree->n <= (*prev)->n)
 			return (0);
 		/* recursive call for right subtree */
-		return (bst_inorder(tree->right, tree));
+		*prev = tree;
+		return (bst_inorder(tree->right, prev));
 	}
 	return (1);
 }
@@ -31,10 +32,12 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	const binary_tree_t *prev = NULL;
+
 	if (!tree)
 		return (0);
 	/* start with prev being NULL, i.e. root of tree */
-	return (bst_inorder(tree, NULL));
+	return (bst_inorder(tree, &prev));
 }
 
 /**
