@@ -1,8 +1,8 @@
 #include "binary_trees.h"
-#include <stdlib.h>
 /**
- * main - Entry point
- *
+ * heap_to_sorted_array - convert a max heap into a sorted array (DESC)
+ * @heap: pointer to the root of the heap
+ * @size: pointer to store size of array
  * Return: Always 0 (Success)
  */
 int *heap_to_sorted_array(heap_t *heap, size_t *size)
@@ -20,5 +20,6 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
 		sorted[i] = heap_extract(&heap);
 	}
 	*size = i;
-	return sorted;
+	sorted = realloc(sorted, *size);
+	return (sorted);
 }

@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * array_to_bst - build a BST from an array
+ * array_to_heap - build a BST from an array
  * @array: pointer to the first element of array
  * @size: number of elements of array
  * Return: pointer to root node

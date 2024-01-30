@@ -1,7 +1,6 @@
 #include "binary_trees.h"
 /**
- * swap_values - This function swaps values in the heap
- *
+ * swap_values_heap - This function swaps values in the heap
  * @v1: a pointer to the value to be swapped
  * @v2: a pointer to the value to be swapped
  */
@@ -15,12 +14,8 @@ void swap_values_heap(heap_t *v1, heap_t *v2)
 }
 
 /**
- * heapify - Builds the maxheap using the sift-down heap sort algorithm
- * Note: each time 2 elements are swapped, the array is printed
- * @array: pointer to the array of integers to be sorted
- * @n: limit of unsorted subarray
- * @P: index of parent node
- * @size: size of the array
+ * heapify - Builds the maxheap using the sift-up heap sort algorithm
+ * @P: Node to siftup from
  */
 void heapify(heap_t *P)
 {
@@ -53,11 +48,11 @@ heap_t *find_last_parent(heap_t *root)
 		if (node->right)
 			queue[end++] = node->right;
 	}
-	return queue[(end + 1) / 2 - 1];
+	return (queue[(end + 1) / 2 - 1]);
 }
 /**
- * bst_insert - insert value in a BST
- * @tree: double pointer to root node of BST
+ * heap_insert - insert value in a max heap
+ * @root: double pointer to root node of Max Heap
  * @value: value to store in the node to be inserted
  * Return: pointer to new node
  */
