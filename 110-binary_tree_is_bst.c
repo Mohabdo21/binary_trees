@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include <stdio.h>
 /**
  * bst_inorder - helper function to traverse a bst using in-order traversal
  *				and determine if it is indeed a bst
@@ -12,13 +13,14 @@ int bst_inorder(const binary_tree_t *tree, const binary_tree_t *prev)
 	if (tree)
 	{
 		/* recursive call for left subtree */
-		if (!bst_inorder(tree->left, prev))
-			return (0);
+		/* if (!bst_inorder(tree->left, prev)) */
+		/* 	return (0); */
 		/* check for duplication or unsorted pairs */
 		if (prev && tree->n <= prev->n)
 			return (0);
 		/* recursive call for right subtree */
-		return (bst_inorder(tree->right, tree));
+		return (bst_inorder(tree->right, tree) &&
+				bst_inorder(tree->left, prev));
 	}
 	return (1);
 }
