@@ -5,6 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+#define ABS(x) ((x) < 0 ? -(x) : (x))
+
+
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -64,5 +69,8 @@ bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
+
+/* AVL */
+int binary_tree_is_avl(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
