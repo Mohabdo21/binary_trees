@@ -80,8 +80,11 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 	if (!tree)
 		return (1);
 
+	if (!check_balance(tree, &height))
+		return (0);
+
 	if (!binary_tree_is_bst(tree))
 		return (0);
 
-	return (check_balance(tree, &height));
+	return (1);
 }
