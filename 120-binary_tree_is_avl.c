@@ -78,7 +78,7 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 	int height;
 
 	if (!tree)
-		return (0);
+		return (1);
 
 	if (!check_balance(tree, &height))
 		return (0);
