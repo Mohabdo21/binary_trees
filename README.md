@@ -20,41 +20,43 @@ This project is part of the Alx - SE curriculum of software engineering. The mai
 
 The project is divided into several sections, each focusing on a different type of tree and the operations that can be performed on them.
 
-**Binary Trees:**
+### Binary Trees
 
-- Creation, insertion, and deletion of nodes
-- Checking if a node is a leaf or a root
-- Different traversal methods (pre-order, in-order, post-order)
-- Measuring the height, depth, size, and balance factor of a binary tree
-- Checking if a binary tree is full or perfect
-- Finding the sibling or uncle of a node
+- Node creation, insertion, and deletion
+- Leaf and root identification
+- Traversal methods: pre-order, in-order, post-order
+- Measurement of height, depth, size, and balance factor
+- Identification of full or perfect binary trees
+- Sibling and uncle identification
 
-**Binary Search Trees (BST):**
+### Binary Search Trees (BST)
 
-- Checking if a binary tree is a valid BST
-- Inserting a value in a BST
-- Building a BST from an array
-- Searching for a value in a BST
-- Removing a node from a BST
+- Validation of BST
+- Value insertion
+- BST construction from an array
+- Value search
+- Node removal
 
-**AVL Trees:**
+### AVL Trees
 
-- Checking if a binary tree is a valid AVL Tree
-- Inserting a value in an AVL Tree
-- Building an AVL tree from an array
-- Removing a node from an AVL tree
-- Building an AVL tree from a sorted array
+- Validation of AVL Tree
+- Value insertion
+- AVL tree construction from an array
+- Node removal
+- AVL tree construction from a sorted array
 
-**Binary Heaps:**
+### Binary Heaps
 
-- Checking if a binary tree is a valid Max Binary Heap
-- Inserting a value in Max Binary Heap
-- Building a Max Binary Heap tree from an array
-- Extracting the root node of a Max Binary Heap
-- Converting a Binary Max Heap to a sorted array of integers
+- Validation of Max Binary Heap
+- Value insertion
+- Max Binary Heap construction from an array
+- Root node extraction
+- Conversion of Binary Max Heap to a sorted array of integers
+
+## Time and Space Complexity Analysis of Binary Tree Operations
 
 | Operation                    | Best Case | Average Case | Worst Case |
-| ---------------------------- | --------- | ------------ | ---------- |
+| ---------------------------- | :-------: | :----------: | :--------: |
 | **Binary Tree**              |           |              |            |
 | Insertion                    | O(1)      | O(log n)     | O(n)       |
 | Deletion                     | O(1)      | O(log n)     | O(n)       |
@@ -72,11 +74,11 @@ The project is divided into several sections, each focusing on a different type 
 | Deletion                     | O(log n)  | O(log n)     | O(log n)   |
 | Search                       | O(1)      | O(n)         | O(n)       |
 
-## Additional Files
+## Additional Resources
 
-- `binary_tree_print.c`: Function to print a binary tree.
-- `binary_trees.h`: Header file containing the prototypes of all functions and the structures to build a binary tree.
+- `binary_tree_print.c`: A utility function for printing a binary tree.
+- `binary_trees.h`: The header file containing the function prototypes and the necessary structures for building a binary tree.
 
 ## Note
 
-Please refer to individual files for more details.
+For more details and usage examples, please refer to the individual files.
