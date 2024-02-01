@@ -5,3 +5,4 @@
 !/README.md
 *main.c
 !/*-O
+!/Makefile
