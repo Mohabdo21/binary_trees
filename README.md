@@ -34,7 +34,7 @@ The project is divided into several sections, each focusing on a different type 
 
 </div>
 <div>
-<img alt="Binary Search Tree" style="width: 300px; padding : 1rem; x " src="images/binary_tree.png">
+<img alt="Binary Search Tree" style="width: 300px; padding : 1rem;" src="images/binary_tree.png">
 </div>
 </div>
 
@@ -52,7 +52,7 @@ The project is divided into several sections, each focusing on a different type 
 
 </div>
 <div>
-<img alt="Binary Search Tree" style="width: 300px; padding : 1rem; x " src="images/Binary_search_tree.gif">
+<img alt="Binary Search Tree" style="width: 300px; padding : 1rem;" src="images/Binary_search_tree.gif">
 </div>
 </div>
 
@@ -67,7 +67,7 @@ The project is divided into several sections, each focusing on a different type 
 - AVL tree construction from a sorted array
 </div>
 <div>
-<img alt="AVL" style="width: 300px; padding : 1rem; x " src="images/avl.gif">
+<img alt="AVL" style="width: 300px; padding : 1rem;" src="images/avl.gif">
 </div>
 </div>
 
@@ -83,7 +83,7 @@ The project is divided into several sections, each focusing on a different type 
 - Conversion of Binary Max Heap to a sorted array of integers
 </div>
 <div>
-<img alt="Binary Heap" style="width: 300px; padding : 1rem; x " src="images/max_heap.gif">
+<img alt="Binary Heap" style="width: 300px; padding : 1rem;" src="images/max_heap.gif">
 </div>
 </div>
 
