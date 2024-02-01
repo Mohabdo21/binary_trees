@@ -6,3 +6,7 @@
 *main.c
 !/*-O
 !/Makefile
+!/main_files
+!/main_files/*.c
+!/images
+!/images/*
