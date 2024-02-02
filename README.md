@@ -145,12 +145,13 @@ There are 2 main ways to traverse a binary tree, namely Depth First Search (DFS)
 ## Usage
 Clone the repository into your local machine:
 
-```
+```bash
 git clone https://github.com/Mohabdo21/binary_trees.git
 cd binary_trees
 ```
+### Using the Makefile
 To compile the project using the Makefile, run the following commands
-```
+```bash
 make        #this will default to task 0
 # or
 make all    #this will default to task 0
@@ -159,24 +160,26 @@ make task TASK_NUM=n # where n is the task number
 # then run the binary
 ./binary_trees
 ```
+**#NOTE:** The `TASK_NUM` variable actually refers to the file number and they aren't necessarily sequential, so task 31 is actually 121 in file number so you should use 121 for the Makefile. To avoid having to determine which file you are actually interested in, use the shell script method outlined in the next section.
 To clean up
-```
+```bash
 make clean
 ```
 To remake and clean
-```
+```bash
 make re TASK_NUM=n # where n is the task number
 ```
 **#NOTE:** You can use the `-s` flag with make to silence the output.
 e.g. `make -s task TASK_NUM=n`
 
-###     TODO: section for the shell script
 
-
-
-
-
-
+### Using the shell script
+There are task numbers ranging from 0 to 40. Execute the shell script `task.sh` as such:
+```bash
+./task.sh <task number>
+# eg.
+.task.sh 31
+```
 
 ## Additional Resources
 

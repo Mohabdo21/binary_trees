@@ -10,3 +10,4 @@
 !/main_files/*.c
 !/images
 !/images/*
+!/task.sh

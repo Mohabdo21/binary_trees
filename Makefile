@@ -1,6 +1,6 @@
 # Makefile for all tasks
 # usage
-# make task TASK_NUM=<task_number> && ./binary_trees
+# make task TASK_NUM=<task_number> && ./binary_trees && make -s clean
 
 # the compiler to be used
 CC = gcc

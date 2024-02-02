@@ -71,16 +71,10 @@ heap_t *heap_insert(heap_t **root, int value)
 		parent = find_last_parent(*root);
 		node = binary_tree_node(parent, value);
 		if (!parent->left)
-		{
 			parent->left = node;
-		}
 		else
-		{
 			parent->right = node;
-		}
 		node = heapify(node);
 	}
-
 	return (node);
-
 }
