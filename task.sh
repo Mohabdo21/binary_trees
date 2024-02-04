@@ -2,12 +2,14 @@
 
 # print exit message
 function exit_message {
-	echo -e "\033[1;32m"
-	echo "============================================================="
-	echo -e "Thank you for using the 0x1D. C - Binary trees project script\n"
-	echo -e "Authors:\n- Mohamed Elfadil Ali\n- Mohannad Babeker\n"
-	echo "============================================================="
-	echo -e "\033[0m"
+	if [ $? -eq 0 ]; then
+		echo -e "\033[1;32m"
+		echo "============================================================="
+		echo -e "Thank you for using the 0x1D. C - Binary trees project script\n"
+		echo -e "Authors:\n- Mohamed Elfadil Ali\n- Mohannad Babeker\n"
+		echo "============================================================="
+		echo -e "\033[0m"
+	fi
 }
 # whenever the script exits
 trap exit_message EXIT
